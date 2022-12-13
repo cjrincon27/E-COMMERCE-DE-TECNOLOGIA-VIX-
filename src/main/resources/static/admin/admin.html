@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vix Admin</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="./assets/CSS/admin.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <img src="./assets/IMG/logo.png" alt="logo de VixApp">
+            <h3><span>V</span>I<span>X</span> Admin</h3>
+            <nav>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <button @click="action = ''" class="nav-link text-danger" aria-current="page">Buyers</button>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-danger" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">Phones</a>
+                        <ul class="dropdown-menu">
+                            <li><button @click="action = 'phones'" class="dropdown-item">Phones</button></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><button @click="action = 'createPhone'" class="dropdown-item">Create Phone</button></li>
+                            <!-- <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><button class="dropdown-item">Set Price</button></li>
+                                        <li><button class="dropdown-item">Set Stock</button></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Separated link</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-danger" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">Accessories</a>
+                        <ul class="dropdown-menu">
+                            <li><button @click="action = 'accessories'" class="dropdown-item ">Accessories</button></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><button @click="action = 'createAccessory'" class="dropdown-item">Create
+                                    Accessory</button></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-danger" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">Consoles</a>
+                        <ul class="dropdown-menu">
+                            <li><button @click="action = 'consoles'" class="dropdown-item">Consoles</button></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><button @click="action = 'createConsole'" class="dropdown-item">Create Console</button>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-danger" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">Tickets purchase</a>
+                        <ul class="dropdown-menu">
+                            <li><button @click="action = 'tickets'" class="dropdown-item">Tickets</button></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item" style="margin-left: 15rem;">
+                        <button class="nav-link text-danger" aria-current="page">Log out</button>
+                    </li>
+                </ul>
+
+            </nav>
+        </header>
+        <main>
+            <h1 v-show="action == ''">
+                Buyers
+            </h1>
+            <h1 v-show="action == 'phones'">
+                Phones
+            </h1>
+            <h1 v-show="action == 'accessories'">
+                Accessories
+            </h1>
+            <h1 v-show="action == 'consoles'">
+                Consoles
+            </h1>
+            <h1 v-show="action == 'createPhone'">
+                Create New Phone
+            </h1>
+            <h1 v-show="action == 'createAccessory'">
+                Create New Accessory
+            </h1>
+            <h1 v-show="action == 'createConsole'">
+                Create New Console
+            </h1>
+
+
+            <section v-show="action == ''" class="table">
+                <span class="tableHead">
+                    <div>First Name</div>
+                    <div>Last Name</div>
+                    <div>E-mail</div>
+                    <div>Purchases</div>
+                    <div>Delete</div>
+                </span>
+                <span class="tableBody">
+                    <template v-for="buyer of buyers">
+                        <div class="aBuyer">
+                            <div>{{buyer.firstName}}</div>
+                            <div>{{buyer.lastName}}</div>
+                            <div>{{buyer.email}}</div>
+                            <div>{{buyer.ticketPurchases.length}}</div>
+                            <div>
+                                <button class="noselect button">
+                                    <span class="text">
+                                        Delete
+                                    </span>
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                </span>
+            </section>
+
+            <section v-show="action == 'phones'" class="table">
+                <span class="tableHead">
+                    <div>Brand</div>
+                    <div>Model</div>
+                    <div>Price</div>
+                    <div>Stock</div>
+                    <div>Sold</div>
+                    <div>Delete</div>
+
+                </span>
+                <span class="tableBody">
+                    <template v-for="phone of phones">
+                        <div class="aBuyer">
+                            <div class="phone1">{{phone.brand}}</div>
+                            <div class="phone2">{{phone.model}}</div>
+                            <div class="phone3">
+                                {{new Intl.NumberFormat('en-EU', { style: 'currency', currency:
+                                'USD'}).format(phone.price)}}
+                                <button @click.prevent="pricePhone(phone.id)">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="phone4"
+                                :style="phone.stock <= 5? 'color:red;' : phone.stock >= 20? 'color:green;': ''">
+                                {{phone.stock}}
+                                <button @click.prevent="alertInput(stockPhone(phone.id))">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="phone5">{{phone.ticketPhonesId.length}}</div>
+                            <div class="phone6">
+                                <button @click.prevent="deletePhone(phone.id)" class="noselect button">
+                                    <span class="text">
+                                        Delete
+                                    </span>
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                </span>
+            </section>
+
+            <form v-show="action == 'createPhone'" @submit.prevent="createPhone()">
+                <div class="boxInputs">
+                    <label>
+                        Brand
+                        <input v-model="phoneBrand" placeholder="brand" type="text" class="input" required="">
+                    </label>
+                    <label>
+                        Model
+                        <input v-model="phoneModel" placeholder="model" type="text" class="input" required="">
+                    </label>
+                    <label>
+                        Camera description
+                        <input v-model="phoneCamera" placeholder="Description" type="text" class="input" required="">
+                    </label>
+                </div>
+                <div class="boxInputs">
+                    <label>
+                        Processor
+                        <input v-model="phoneProcessor" placeholder="processor" type="text" class="input" required="">
+                    </label>
+                    <label>
+                        Battery
+                        <input v-model="phoneBattery" placeholder="battery" type="text" class="input" required="">
+                    </label>
+                    <label>
+                        Size
+                        <input v-model="phoneSize" placeholder="size" type="text" class="input" required="">
+                    </label>
+                </div>
+                <div class="boxInputs">
+                    <label>
+                        Price
+                        <input v-model="phonePrice" placeholder="price" type="number" class="input" required="">
+                    </label>
+                    <div class="array">
+                        <label>
+                            RAM
+                            <input v-model="phoneRam" placeholder="RAM" type="text" class="input">
+                            <button @click.prevent="addRam(1)">
+                                <span class="material-symbols-outlined">
+                                    add
+                                </span>
+                            </button>
+                            <button>
+                                <span @click.prevent="deleteRam(1)" class="material-symbols-outlined">
+                                    remove
+                                </span>
+                            </button>
+                        </label>
+                        <p v-show="phoneRams.length != 0">{{phoneRams}}</p>
+
+                    </div>
+                    <div class="array">
+                        <label>
+                            ROM
+                            <input v-model="phoneRom" placeholder="ROM" type="text" class="input">
+                            <button @click.prevent="addRom(1)">
+                                <span class="material-symbols-outlined">
+                                    add
+                                </span>
+                            </button>
+                            <button @click.prevent="deleteRom(1)">
+                                <span class="material-symbols-outlined">
+                                    remove
+                                </span>
+                            </button>
+                        </label>
+                        <p v-show="phoneRoms.length != 0">{{phoneRoms}}</p>
+                    </div>
+                </div>
+                <div class="boxInputs">
+                    <label>
+                        Stock
+                        <input v-model="phoneStock" placeholder="stock" type="number" class="input" required="">
+                    </label>
+                    <div class="array">
+                        <label>
+                            Links Images
+                            <input v-model="phoneImage" placeholder="link" type="text" class="input">
+                            <button @click.prevent="addImage('phone')">
+                                <span class="material-symbols-outlined">
+                                    add
+                                </span>
+                            </button>
+                            <button @click.prevent="deleteImage('phone')">
+                                <span class="material-symbols-outlined">
+                                    remove
+                                </span>
+                            </button>
+                        </label>
+                        <p v-show="phoneImages.length != 0">{{phoneImages}}</p>
+                    </div>
+                    <label>
+                        Color
+                        <input v-model="phoneColor" placeholder="color" type="text" class="input" required="">
+                    </label>
+                </div>
+                <div class="array">
+                    <button type="submit" class="bton draw-border">Create</button>
+                </div>
+
+            </form>
+
+
+            <section v-show="action == 'accessories'" class="table">
+                <span class="tableHead">
+                    <div>Brand</div>
+                    <div>Model</div>
+                    <div>Price</div>
+                    <div>Stock</div>
+                    <div>Sold</div>
+                    <div>Delete</div>
+
+                </span>
+                <span class="tableBody">
+                    <template v-for="accessory of accessories">
+                        <div class="aBuyer">
+                            <div class="phone1">{{accessory.brand}}</div>
+                            <div class="phone2">{{accessory.model.slice(0,23)}}</div>
+                            <div class="phone3">
+                                {{new Intl.NumberFormat('en-EU', { style: 'currency', currency:
+                                'USD'}).format(accessory.price)}}
+                                <button @click.prevent="priceAccessory(accessory.id)">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="phone4"
+                                :style="accessory.stock <= 5? 'color:red;' : accessory.stock >= 20? 'color:green;': ''">
+                                {{accessory.stock}}
+                                <button @click.prevent="stockAccessory(accessory.id)">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="phone5">{{accessory.ticketAccesoriesId.length}}</div>
+                            <div class="phone6">
+                                <button @click.prevent="deleteAccessory(accessory.id)" class="noselect button">
+                                    <span class="text">
+                                        Delete
+                                    </span>
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                </span>
+            </section>
+
+            <form v-show="action == 'createAccessory'" @submit.prevent="createAccessory()">
+                <div class="boxInputs">
+                    <label>
+                        Brand
+                        <input v-model="accessoryBrand" placeholder="brand" type="text" class="input" required="">
+                    </label>
+                    <label>
+                        Model
+                        <input v-model="accessoryModel" placeholder="model" type="text" class="input" required="">
+                    </label>
+                    <label>
+                        Description
+                        <input v-model="accessoryDescription" placeholder="Description" type="text" class="input"
+                            required="">
+                    </label>
+                </div>
+
+                <div class="boxInputs">
+                    <select v-model="accessoryType">
+                        <option selected disabled>Type</option>
+                        <option value="CONSOLE">Accessory console</option>
+                        <option value="CHARGER">Charger</option>
+                        <option value="SMARTWATCH">Smartwatch</option>
+                        <option value="HEADPHONE">Headphone</option>
+                        <option value="PHONECASE">Phonecase</option>
+                    </select>
+                    <label>
+                        Price
+                        <input v-model="accessoryPrice" placeholder="price" type="number" class="input" required="">
+                    </label>
+                    <label>
+                        Stock
+                        <input v-model="accessoryStock" placeholder="stock" type="number" class="input" required="">
+                    </label>
+                </div>
+                <div class="boxInputs">
+
+                    <div class="array">
+                        <label>
+                            Links Images
+                            <input v-model="accessoryImage" placeholder="link" type="text" class="input">
+                            <button @click.prevent="addImage('accessory')">
+                                <span class="material-symbols-outlined">
+                                    add
+                                </span>
+                            </button>
+                            <button @click.prevent="deleteImage('accessory')">
+                                <span class="material-symbols-outlined">
+                                    remove
+                                </span>
+                            </button>
+                        </label>
+                        <p v-show="accessoryImages.length != 0">{{accessoryImages}}</p>
+                    </div>
+                    <label>
+                        Color
+                        <input v-model="accessoryColor" placeholder="color" type="text" class="input" required="">
+                    </label>
+                </div>
+                <div class="array">
+                    <button type="submit" class="bton draw-border">Create</button>
+                </div>
+
+            </form>
+
+            <section v-show="action == 'consoles'" class="table">
+                <span class="tableHead">
+                    <div>Brand</div>
+                    <div>Model</div>
+                    <div>Price</div>
+                    <div>Stock</div>
+                    <div>Sold</div>
+                    <div>Delete</div>
+
+                </span>
+                <span class="tableBody">
+                    <template v-for="console of consoles">
+                        <div class="aBuyer">
+                            <div class="phone1">{{console.brand}}</div>
+                            <div class="phone2">{{console.model.slice(0,23)}}</div>
+                            <div class="phone3">
+                                {{new Intl.NumberFormat('en-EU', { style: 'currency', currency:
+                                'USD'}).format(console.price)}}
+                                <button @click.prevent="priceConsole(console.id)">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="phone4"
+                                :style="console.stock <= 5? 'color:red;' : console.stock >= 20? 'color:green;': ''">
+                                {{console.stock}}
+                                <button @click.prevent="stockConsole(console.id)">
+                                    <span class="material-symbols-outlined">
+                                        edit
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="phone5">{{console.ticketConsoles.length}}</div>
+                            <div class="phone6">
+                                <button @click.prevent="deleteConsole(console.id)" class="noselect button">
+                                    <span class="text">
+                                        Delete
+                                    </span>
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                </span>
+            </section>
+        </main>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/JS/admin.js"></script>
+
+</body>
+
+</html>

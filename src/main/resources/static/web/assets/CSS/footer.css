@@ -1,0 +1,168 @@
+        
+      
+* {
+   /* border: solid .1rem red; */
+ }
+      /* FOOTER */
+
+      .footer-contenedor {
+        min-width: 100%;
+        margin-top: 10rem;
+        height: 30vh;
+        background-color: black;
+      
+      }
+      .footer-section {
+
+
+        width: 100%;
+        height: 28vh;
+        background: radial-gradient(ellipse at bottom, rgba(194, 28, 28, 0.0984768907563025) 45%, rgba(0, 0, 0, 1) 64%);
+        background-size: cover;
+        background-position: bottom;
+      
+      
+      }
+
+.contenedorIconos{
+  gap: 1rem;
+}
+.iconosMedia{
+  height: 4rem;
+  border-radius: 100%;
+  cursor:pointer;
+ 
+}
+.menuFooter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  -webkit-box-shadow: inset 0px 0px 0.2em 0px var(--glow-color),
+  0px 0px 0.5em 0px var(--glow-color);
+-moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+  0px 0px 0.5em 0px var(--glow-color);
+/* box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+  0px 0px 0.5em 0px var(--glow-color); */
+  /* box-shadow: 0 0 2em 0.2em var(--glow-color); */
+  /* background: var(--glow-color); */
+  margin-bottom: 0rem;
+  
+}
+.menuFooter a{
+  text-decoration: none;
+  color: #fff;
+  font-size: .9rem;
+}
+      @media screen and (max-width:1024px) {
+        .glowing-txt a{
+            font-size: 1.3rem;
+        }
+    
+      }
+      @media screen and (max-width:992px) {
+        .glowing-txt a{
+            font-size: 1.2rem;
+        }
+      }
+      @media screen and (max-width:768px) {
+        .glowing-txt a{
+            font-size: 1rem;
+        }
+      
+      }
+      @media screen and (max-width:700px) {
+     .cardRegistro{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+     }
+     .iconosMedia{
+        height: 2.5rem;
+     }
+     .footer-section{
+        height: 17vh;
+     }
+   
+     .glowing-btn{
+      width: 100% !important;
+      letter-spacing: .5em !important;
+      perspective: .1em !important;
+
+    }
+    .glowing-txt{
+      display: flex !important;
+      justify-content: center !important;
+    }
+      }
+      @media screen and (max-width:425px) {
+      
+        footer{
+          width: 100% !important;
+        }
+        .discoverMore{
+          width: 100% !important;
+        }
+        .joinUsGIF{
+            height: 9rem;
+            margin-right: .5rem;
+          }
+          .btnCards{
+            font-size: 15px;
+            padding: .5rem;
+          }
+          
+          .contenedorIconos{
+            width: 100% !important;
+          }
+          .glowing-btn{
+            width: 100% !important;
+            letter-spacing: .5em !important;
+            perspective: .1em !important;
+      
+          }
+      }
+
+      /* @media screen and (max-width:420px) {
+        footer{
+          width: 100% !important;
+        }
+        .discoverMore{
+          width: 100% !important;
+        }
+        .joinUsGIF{
+            height: 9rem;
+            margin-right: .5rem;
+          }
+          .btnCards{
+            font-size: 15px;
+            padding: .5rem;
+          }
+          
+          .contenedorIconos{
+            width: 100% !important;
+          }
+          .glowing-btn{
+            width: 100% !important;
+            letter-spacing: .5em !important;
+            perspective: 2.1em !important;
+      
+          }
+      } */
+          
+      
+      @media screen and (max-width:320px) {
+        .joinUsGIF{
+            height: 8rem;
+            margin-right: .2rem;
+          }
+          .iconosMedia{
+            height: 2rem;
+         }
+         
+         .signupForm{
+            width: 100%;
+         }
+         
+      }

@@ -1,0 +1,151 @@
+@import url("./carlos.css");
+@import url("./pollo.css");
+@import url("./footer.css");
+
+*{
+  /*   border: solid .1rem; */
+}
+
+
+header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.286);
+}
+.container-consolas{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 100%;
+    gap: 5rem;
+    margin-bottom: 5rem;
+    
+
+/*   background-image: url(https://i.pinimg.com/originals/a8/11/f5/a811f5e1b94a488cfd5b866856b59c50.jpg);  */
+ /*    background-repeat: no-repeat;
+    background-size:cover ;  */
+
+
+  
+}
+.div-consola{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 70vh;
+    width: 60%;
+    margin: 5px;
+    background-size: cover;
+    background-position: center;
+
+    box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.426)
+
+}
+.div-consola-imagenes{
+    display: flex;
+    justify-content: space-around;
+    height: 50%;
+    width: 100%;
+}
+.imagen-consola{
+    margin-top: 5px;
+    width: 30%;
+    height: 350px;
+    filter: drop-shadow(0 0 2rem white);
+    
+}
+.imagen-consola:hover{
+    animation: movimientoDePng 5s ;
+}
+
+.div-descripcion-consolas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  border-bottom: solid .2rem red;  
+  border-top: solid .2rem red;  
+  width: 100%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.824);
+  padding: 5px;
+  margin-bottom: 1rem;
+}
+.precio-consola{
+    color: rgb(19, 221, 19);
+    font-size: 1.5rem;
+}
+.btnCards{
+    margin-bottom: 5px;
+}
+
+@keyframes movimientoDePng {
+    0%{
+        transform: scale(1.1);
+    }
+    10%{
+        transform: scale(1.1);
+    }
+    20%{
+        transform:  scale(1.2);
+    }
+    30%{
+        transform:  scale(1.2);
+    }
+    40%{
+        transform:  scale(1.3);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    60%{
+        transform: scale(1.4);
+    }
+    70%{
+        transform:  scale(1.4);
+    }
+    90%{
+        transform:  scale(1.5);
+    }
+    100%{
+        transform:  scale(1.5);
+    }
+    
+}
+@media screen and (max-width:1668px){
+    .imagen-consola{
+        width: 40%;
+    }
+
+}
+@media screen and (max-width:1200px){
+    .imagen-consola{
+        width: 45%;
+    }
+}
+@media screen and (max-width:840px){
+    .div-consola{
+        width: 100%;
+    }
+
+}
+@media screen and (max-width:518px){
+    .div-consola-imagenes{
+  
+        flex-direction: column  ;
+        align-items: center;
+    }
+    .imagen-consola{
+        width: 80% ;
+        height: 50% ;
+    }
+    header img{
+        width: 100%;
+
+    }
+
+}

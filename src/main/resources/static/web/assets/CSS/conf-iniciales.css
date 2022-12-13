@@ -1,0 +1,12 @@
+:root{
+    --colorPrincipal:black;
+    --colorSecundario:white;
+    --colorDecorado:red;
+    --colorSombras:yellow;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

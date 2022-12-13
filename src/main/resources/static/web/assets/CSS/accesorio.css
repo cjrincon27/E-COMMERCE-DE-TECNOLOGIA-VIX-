@@ -1,0 +1,108 @@
+@import url("./pollo.css");
+@import url("./carlos.css");
+
+* {
+    /*  border: solid  .1rem red; */
+}
+
+.div-img-accesorio {
+    height: 70%;
+    width: 100%;
+
+}
+
+.imagen-card-accesorios {
+    height: 300px;
+    width: 350px;
+}
+
+#dcontrol {
+    height: 20vh !important;
+    width: 60%;
+}
+
+#canvas3d {
+    height: 30vh !important;
+}
+
+.dropdown-item {
+    font-size: 1rem;
+}
+
+.btn-outline-dange {
+    border: none;
+}
+
+/* media screen
+============================================================================================ */
+@media screen and (max-width:1199px) {
+    #contenedor-phones {
+        min-width: 250px !important;
+    }
+
+    #containercard {
+        min-width: 250px !important;
+        margin: 1rem;
+    }
+
+
+}
+
+
+
+
+
+
+@media screen and (max-width:537px) {
+    .tituloaccs {
+        width: 410px !important;
+        margin: none;
+    }
+
+    #containercard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width:767px) {
+
+    #containercard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+@media screen and (max-width:1105px) {
+
+    .lattest-product-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    #contenedor-phones {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 3rem;
+
+    }
+
+    #containercard {
+
+        justify-content: center;
+        align-items: center;
+        min-width: 250px !important;
+        margin: 1rem;
+
+    }
+
+}

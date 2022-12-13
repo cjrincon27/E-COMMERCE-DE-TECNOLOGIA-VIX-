@@ -1,0 +1,372 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+header {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+header img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    border: 1px solid red;
+    position: absolute;
+    bottom: .2rem;
+    left: 3.8rem;
+    object-fit: contain;
+}
+
+header h3 {
+    position: absolute;
+    bottom: .5rem;
+    left: 7.4rem;
+    font-size: 1rem;
+}
+
+header h3 span {
+    color: red;
+    font-weight: 700;
+}
+
+header nav {
+    margin-left: 18rem;
+    width: auto;
+}
+
+main {
+    height: 90vh;
+    width: 100%;
+    background-color: rgb(31, 3, 3);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-weight: 500;
+    padding-top: 1.5rem;
+}
+
+main h1 {
+    margin-bottom: 2rem;
+}
+
+/* main table {
+    width: 75%;
+    height: 73%;
+    border-collapse: collapse;
+    border: 1px solid whitesmoke;
+}
+
+
+thead tr th {
+    text-align: center;
+    padding-top: .5rem;
+    border: 1px solid whitesmoke;
+}
+
+tbody td {
+    text-align: center;
+    border: 1px solid whitesmoke;
+    height: 1rem !important; */
+/* } */
+.table {
+    width: 85%;
+    height: 80%;
+    background-color: aliceblue;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: relative;
+    border-radius: .5rem;
+    box-shadow: 2px 2px 3px rgb(20, 20, 20);
+}
+
+.tableHead {
+    display: flex;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    background-color: grey;
+    height: 2rem;
+    gap: 1rem;
+    width: 100%;
+    z-index: 99;
+}
+
+
+.tableBody {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+.aBuyer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid slategray;
+    box-shadow: 3px 2px 5px rgb(139, 139, 139);
+    padding-top: .2rem;
+    position: relative;
+}
+
+.aBuyer:hover {
+    background-color: rgba(214, 214, 214, 0.767);
+}
+
+.aBuyer div button {
+    border: 1px;
+}
+
+.phone1 {
+    position: absolute;
+    left: 6rem;
+}
+
+.phone2 {
+    position: absolute;
+    left: 16rem;
+}
+
+.phone3 {
+    position: absolute;
+    left: 28rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.phone4 {
+    position: absolute;
+    left: 40.1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.phone5 {
+    position: absolute;
+    left: 51rem;
+}
+
+.phone6 {
+    margin-left: 54rem;
+}
+
+
+form {
+    width: 85%;
+    height: 80%;
+    background-color: rgba(240, 248, 255, 0.959);
+    border-radius: .5rem;
+    box-shadow: 2px 2px 3px rgb(20, 20, 20);
+    padding: .7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.boxInputs {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem;
+}
+
+.array {
+    position: relative;
+
+}
+
+.array p {
+    color: black;
+    position: absolute;
+    top: 3rem;
+
+}
+
+/* From uiverse.io by @alexruix */
+label {
+    font-weight: 500;
+    color: rgb(31, 31, 31);
+}
+
+.input {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: rgb(255, 0, 0);
+    padding: .2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: rgb(31, 31, 31);
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    font-weight: 500;
+    margin-left: .5rem;
+}
+
+.input:focus,
+input:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: red;
+}
+
+.input::placeholder {
+    color: rgba(83, 83, 83, 0.603);
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+
+
+
+
+
+.button {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background: #e62222;
+}
+
+.button,
+.button span {
+    transition: 200ms;
+}
+
+.button .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+}
+
+.button .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button svg {
+    width: 15px;
+    fill: #eee;
+}
+
+.button:hover {
+    background: #ff3636;
+}
+
+.button:hover .text {
+    color: transparent;
+}
+
+.button:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:active .icon svg {
+    transform: scale(0.8);
+}
+
+
+
+
+
+.draw-border {
+    box-shadow: inset 0 0 0 3px black;
+    color: black;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
+}
+
+.draw-border::before,
+.draw-border::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.draw-border::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+}
+
+.draw-border::after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+}
+
+.draw-border:hover {
+    color: red;
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
+    border-color: red;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+}
+
+.draw-border:hover::before {
+    transition-delay: 0s, 0s, 0.25s;
+}
+
+.draw-border:hover::after {
+    transition-delay: 0s, 0.25s, 0s;
+}
+
+.bton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    font: 600 17px "Roboto Slab", sans-serif;
+    padding: .7rem 1.6rem;
+    letter-spacing: 0.05rem;
+    width: 7rem;
+    height: 4;
+    text-align: center;
+}
+
+.bton:focus {
+    outline: 2px dotted red;
+}

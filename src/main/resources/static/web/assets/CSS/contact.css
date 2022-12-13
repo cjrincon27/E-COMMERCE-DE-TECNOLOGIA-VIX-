@@ -1,0 +1,397 @@
+#question{
+    height: 4rem;
+}
+
+@import url("./footer.css");
+/* LOGIN */
+.cardRegistro{
+    display: flex;
+    width: 100%;
+    margin-top: -8rem;
+    justify-content: center;
+
+  }
+  .signupSection {
+    /* background: url(https://source.unsplash.com/TV2gg2kZD1o/1600x800); */
+    /* background-repeat: no-repeat; */
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 450px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+  }
+  
+  .registerSection{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 450px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+    /* margin-top: 1.5rem; */
+  }
+  /* .nameRegister{
+    width: 50%;
+  } */
+  
+  .info {
+    /* width: 50%; */
+    background: black;
+    padding: 30px 0;
+    border: 1px solid #dc1d1d;
+    border-radius: .5rem;
+    font-family: 'Nanum Gothic Coding', monospace;
+   
+  
+  }
+  
+  .gifJuntos{
+    display: flex;
+    justify-content: center;
+  }
+  .tab-content{
+    background: #dc1d1d;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  .signupForm {
+    width: 20rem;
+    padding: 0rem;
+    background: #dc1d1d;
+    border-radius: .5rem;
+    transition: .2s;
+    font-family: 'Nanum Gothic Coding', monospace;
+    margin-top:1rem;
+  
+    
+    
+  }
+  
+  .emailInicio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  .contraInicio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    
+  }
+  
+  .emailRegistro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+   
+  }
+  
+  
+  .botonResgistrar{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .btl{
+    border: 1px solid #dc1d1d;
+    padding: .3rem;
+  }
+  
+  .botonIniciar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  
+  
+  .inputFields {
+    margin-top: 3rem;
+    margin: 15px 0;
+    font-size: 16px;
+    font-family: 'Nanum Gothic Coding', monospace;
+    padding: 10px;
+    width: 250px;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+    border-radius: .5rem;
+    border: 2px solid transparent;
+    outline: none;
+    border-bottom: 2px solid #3f3f3f;
+    caret-color: black;
+    color: #dc1d1d;
+    background-color: black;
+    padding: 5px;
+    transition: .5s linear;
+    font-family: monospace;
+    letter-spacing: 1px;
+  }
+  
+  .inputFields:focus {
+    border: 2px solid #dc1d1d;
+    caret-color: #dc1d1d;
+    color: #dc1d1d;
+    box-shadow: 4px 4px 10px #070707;
+  }
+  
+  .inputFields:focus::placeholder {
+    color: #dc1d1d;
+  }
+  
+  .noBullet {
+    list-style-type: none;
+    padding: 0;
+  
+    
+  }
+  
+  .noBullet .li2{
+    margin-top: -2rem;
+  }
+  
+  
+  #join-btn {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+    /* &:hover {
+      background: rgba(20, 20, 20, .8);
+      padding: 10px 80px;
+    } */
+  }
+  
+  .contieneLogo{
+  
+    display: flex;
+    justify-content: center;
+    margin-top: -1rem;
+  }
+  
+  .logoLogin {
+    height: 8rem;
+    margin-top: 5rem;
+  }
+  .contieneBotones{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nanum Gothic Coding', monospace;
+    gap: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .center-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .doIt{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+    /* margin-bottom: 2rem; */
+  }
+  
+  
+  .letGif{
+    height: 20rem;
+    margin-top: -6rem;
+  }
+  
+  /* .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  main .mainLogin{
+    min-height: 70vh !important;
+    width: 100%;
+  }
+  .joinUsGIF{
+    height: 9rem;
+    margin-right: 2rem;
+  }
+  .mainLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 68vh;
+    width: 100%;
+    background-color: #000000;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    height: 10vh;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 3rem;
+    z-index: 10;
+  
+  }
+  
+
+.glowing-txt a{
+    font-size: 1.5rem;
+}
+.disabled{
+  display: none !important
+}
+.swal2-title{
+  background-color: #000000 !important;
+  color: white !important;
+}
+.swal2-popup{
+  background-color: #000000 !important;
+  color: white !important;
+}
+
+.swal2-confirm {
+  --color: rgb(220, 29, 29) !important;
+  /* --color2: black; */
+  padding: 0.8em 1.75em !important;
+  background-color:  rgb(220, 29, 29) !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  border: .3px solid var(--color) !important;
+  transition: .5s !important;
+  position: relative !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  z-index: 1 !important;
+  font-weight: 300 !important;
+  font-size: 17px !important;
+  font-family: 'Nanum Gothic Coding', monospace !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+
+ }
+ 
+ .swal2-confirm::after, .swal2-confirm::before {
+  content: '' !important;
+  display: block !important;
+  height: 100% !important;
+  width: 100% !important;
+  transform: skew(90deg) translate(-50%, -50%) !important;
+  position: absolute !important;
+  inset: 50% !important;
+  left: 25% !important;
+  z-index: -1 !important;
+  transition: .3s ease-out !important;
+  background-color:  black !important;
+  color:#fff !important ;
+ }
+ 
+ .swal2-confirm::before {
+  top: -50% !important;
+  left: -25% !important;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%) !important;
+ }
+ 
+ .swal2-confirm:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%) !important;
+ }
+ 
+ .swal2-confirm:hover::after {
+  transform: skew(45deg) translate(-50%, -50%) !important;
+ 
+  
+ }
+ 
+ .swal2-confirm:hover {
+  color: rgb(220, 29, 29) !important;
+ }
+ 
+ .swal2-confirm:active {
+  filter: brightness(.7) !important;
+  transform: scale(.98) !important;
+
+ }
+        
+      @media screen and (max-width:1024px) {
+        .glowing-txt a{
+            font-size: 1.3rem;
+        }
+    
+      }
+      @media screen and (max-width:992px) {
+        .glowing-txt a{
+            font-size: 1.2rem;
+        }
+      }
+      @media screen and (max-width:768px) {
+        .glowing-txt a{
+            font-size: 1rem;
+        }
+      
+      }
+      @media screen and (max-width:425px) {
+     .cardRegistro{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+     }
+     .logoLogin {
+        height: 8rem;
+        margin-top: 0rem;
+      }
+      }
+      @media screen and (max-width:375px) {
+        .joinUsGIF{
+            height: 9rem;
+            margin-right: .5rem;
+          }
+          .btnCards{
+            font-size: 15px;
+            padding: .5rem;
+          }
+      }
+      @media screen and (max-width:320px) {
+        .joinUsGIF{
+            height: 8rem;
+            margin-right: .2rem;
+          }
+          .letGif{
+            height: 18rem;
+          }
+     
+         
+         .signupForm{
+            width: 100%;
+         }
+         
+      }
+  

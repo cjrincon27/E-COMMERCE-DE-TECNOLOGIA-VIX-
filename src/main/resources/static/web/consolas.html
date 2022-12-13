@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consoles</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="icon" href="./assets/img/VixFavicon.png">
+    <link rel="stylesheet" href="./assets/CSS/consolas.css">
+
+</head>
+
+<body>
+    <div id="app">
+    <main class="main-console mb-3" >
+       
+        <div id="contenedordelmenu" class="navbar navbar-dark navbar-expand-md contenedormenu justify-content-center" >
+            <button class="navbar-toggler btnCards" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">    
+                Menu</button>  
+         <nav class="collapse navbar-collapse"  id="navbarSupportedContent">
+
+            <a href="../index.html">
+                
+                <button class="boton-nav text-white">
+                    <span>Home</span>
+                    <div class="top"></div>
+                    <div class="left"></div>
+                    <div class="bottom"></div>
+                    <div class="right"></div>
+                </button>
+            </a>
+            <a href="./phones.html">
+                <button class="boton-nav text-white">
+                    <span>Phones</span>
+                    <div class="top"></div>
+                    <div class="left"></div>
+                    <div class="bottom"></div>
+                    <div class="right"></div>
+                </button>
+            </a>
+            <a href="#">               
+            <button class="boton-nav text-white">
+                <span>Consoles</span>
+                <div class="top"></div>
+                <div class="left"></div>
+                <div class="bottom"></div>
+                <div class="right"></div>
+            </button>
+            </a>
+            <a href="./accessories.html">
+                <button class="boton-nav text-white">
+                    <span>Accessories</span>
+                    <div class="top"></div>
+                    <div class="left"></div>
+                    <div class="bottom"></div>
+                    <div class="right"></div>
+                </button></a>
+            <a href="./aboutUs.html">
+                <button class="boton-nav text-white">
+                    <span>About us</span>
+                    <div class="top"></div>
+                    <div class="left"></div>
+                    <div class="bottom"></div>
+                    <div class="right"></div>
+                </button>
+            </a>
+           
+           
+         </nav>
+         <a v-if="buyer == ''" class="log-in-boton" href="./login.html">Sign in</a>
+         <a v-if="buyer != ''" class="log-in-boton" v-on:click="logOut()" href="#">Log out</a>
+
+
+         
+         <a href="./cart.html"><img class="carrito-nav-imagen"  src="./assets/img/carrito.gif" alt=""></a>
+        </div>
+
+        <header>
+            <img src="./assets/img/tituloconsole.gif" alt="">
+        </header>
+<!-- Start consoles product Area --> 
+          <div  class="container-consolas">
+            <div v-for="consola in consolas" class="div-consola" :style="'background-image: url(' + consola.background +');'">
+                <div class="div-consola-imagenes">
+                    <img v-for="imagen in consola.images"  class="imagen-consola" :src="imagen">
+                </div>
+                <div class="div-descripcion-consolas">
+                    <h3 class="text-center">{{consola.brand + ' ' + consola.model}} </h3>
+                    <div class="d-flex justify-content-center gap-5">
+                       <h4>RAM: {{consola.ram}}</h4>
+                       <h4>Internal memory: {{consola.rom}} </h4>
+                    </div>
+                    <p class="text-center text-white">{{consola.description}} </p>
+                    <p class="text-center text-white">{{consola.controls}} </p>
+                    <div class="div-price-console d-flex justify-content-center gap-5">
+                        <p class="text-white" >Price: <span class="precio-consola "> {{new Intl.NumberFormat('in-EU', { style: 'currency', currency: 'USD'}).format(consola.price)}}</span> </p>
+                        <p class="text-white">Stock:  <span :class="consola.stock < 10 ? 'text-danger' : ''">{{consola.stock}}</span></p>
+                    </div>
+          <!--           <img src="" alt=""> -->
+                    
+                    
+                     <button @click=" agregarAlCarrito(consola.id)" class="btnCards">Add cart</button>
+                </div>
+                
+            </div>         
+         </div>
+ 
+        
+    </main>
+    <footer >
+        <section class="discoverMore">
+                <button class='glowing-btn'><span class='glowing-txt'><a href="#">DISCOVER MORE</span></a></button>
+              </div>
+        </section>
+        <div class="footer-section d-flex align-items-center justify-content-center contenedorIconos"> 
+            <a href="#"><img src="./assets/img/icono3.gif" class="iconosMedia r"></a>
+            <a href="#"><img src="./assets/img/icono1.gif" class="iconosMedia" ></a>
+            <a href="#"><img src="./assets/img/icono2.gif" class="iconosMedia"></a>
+           
+        </div>
+        <p class="menuFooter"><a href="#">HOME</a> <a href="#">STORE</a> <a href="#">CONTACT</a></p>
+       
+
+    </footer>
+   </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 3000, });</script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/JS/consolas.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="">
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>Details </title>
+	<!--
+			CSS
+			============================================= -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link rel="stylesheet" href="./assets/CSS/details-carlos.css">
+	<link rel="icon" href="./assets/img/VixFavicon.png">
+</head>
+
+
+<body id="app">
+     <div class="contenedorSuperiorDelnav">
+	<div id="contenedordelmenu" class="navbar navbar-dark navbar-expand-md contenedormenu justify-content-center" >
+		<button class="navbar-toggler btnCards" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">    
+			Menu</button>  
+	 <nav class="collapse navbar-collapse"  id="navbarSupportedContent">
+
+		<a href="../index.html">
+			
+			<button class="boton-nav text-white">
+				<span>Home</span>
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="bottom"></div>
+				<div class="right"></div>
+			</button>
+		</a>
+		<a href="./phones.html">
+			<button class="boton-nav text-white">
+				<span>Phones</span>
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="bottom"></div>
+				<div class="right"></div>
+			</button>
+		</a>
+		<a href="./consolas.html">               
+		<button class="boton-nav text-white">
+			<span>Consoles</span>
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="bottom"></div>
+			<div class="right"></div>
+		</button>
+		</a>
+		<a href="./accessories.html">
+			<button class="boton-nav text-white">
+				<span>Accessories</span>
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="bottom"></div>
+				<div class="right"></div>
+			</button></a>
+		<a href="./aboutUs.html">
+			<button class="boton-nav text-white">
+				<span>About us</span>
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="bottom"></div>
+				<div class="right"></div>
+			</button>
+		</a>
+	   
+	   
+	 </nav>
+	 <a v-if="buyer == ''" class="log-in-boton" href="./login.html">Sign in</a>
+	 <a v-if="buyer != ''" class="log-in-boton" v-on:click="logOut()" href="#">Log out</a>
+
+	 
+	 <a href="./cart.html"><img class="carrito-nav-imagen"  src="./assets/img/carrito.gif" alt=""></a>
+	</div>
+</div>
+
+	<!--================Single Product Area =================-->
+	<div class="product_image_area mt-5">
+		<div class="container ">
+			<div class="row s_product_inner">
+				<div class="content">
+					<div class="bg-shape">
+						<!-- //<img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405214/starwars/logo.webp" alt=""> -->
+					</div>
+
+
+					<div  class="product-img">
+						<div class="product-img__item " id="img4">
+							
+								<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+									<div class="carousel-inner">
+									  <div  class="carousel-item active" data-bs-interval="4000">
+										<img :src="primerImagenDelColorSeleccionado" alt="star wars" class="product-img__img imagen-carrucel">
+									  </div>
+									  <div v-for="imagen in imagenesDelColorSeleccionado" class="carousel-item" data-bs-interval="4000">
+										<img :src="imagen" alt="star wars" class="product-img__img imagen-carrucel">
+									  </div>
+									 
+									</div>
+									<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+									  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									  <span class="visually-hidden">Previous</span>
+									</button>
+									<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+									  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+									  <span class="visually-hidden">Next</span>
+									</button>
+								  </div>
+							
+						</div>
+					</div>
+					<!-- <div  class="product-img">
+						<div class="product-img__item " id="img4">
+							
+								<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+									<div class="carousel-inner">
+									  <div  class="carousel-item active" data-bs-interval="4000">
+										<img :src="primerImagenDelColorSeleccionado" alt="star wars" class="product-img__img imagen-carrucel">
+									  </div>
+									  <div v-for="imagen in imagenesDelColorSeleccionado" class="carousel-item" data-bs-interval="4000">
+										<img :src="imagen" alt="star wars" class="product-img__img imagen-carrucel">
+									  </div>
+									 
+									</div>
+									<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+									  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									  <span class="visually-hidden">Previous</span>
+									</button>
+									<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+									  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+									  <span class="visually-hidden">Next</span>
+									</button>
+								  </div>
+							
+						</div>
+					</div> -->
+
+
+
+					<div class="product-slider">
+						{{cambiarColorSeleccionado}}
+					
+
+						<div class="product-slider__wrp swiper-wrapper">
+							<div class="product-slider__item swiper-slide" data-target="img4">
+								<div class="product-slider__card">
+								
+									<div class="product-slider__content">
+										<h1 class="product-slider__title">
+											{{accesorioSeleccionado.type}}<br>
+
+										</h1>
+										<span class="product-slider__price mt-3">{{new Intl.NumberFormat('in-EU', { style: 'currency', currency: 'USD'}).format(accesorioSeleccionado.price)}},<sup class="l-through"><strike> {{new Intl.NumberFormat('in-EU', { style: 'currency', currency: 'USD'}).format(accesorioSeleccionado.price * 1.1)}}</strike></sup></span>
+										<div class="product-ctr">
+											<div class="product-labels">
+												<div class="product-labels__title">COLORS</div>
+
+												<div  class="product-labels__group">
+													<label  v-for="color in accesorioSeleccionado.accessoryImageAndColorDTOS" class="product-labels__item">
+														<input v-model="colorSeleccionado" :value="color.color" type="radio" class="product-labels__checkbox"
+															name="type5">
+														<span class="product-labels__txt">{{color.color}}</span>
+													</label>
+
+												
+													</label>
+
+													
+
+												</div>
+
+											</div>
+
+											<span class="hr-vertical"></span>
+
+											<div class="product-inf">
+												<div class="product-inf__percent">
+													<div class="product-inf__percent-circle">
+														<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+															viewBox="0 0 100 100">
+															<defs>
+																<linearGradient id="gradient" x1="0%" y1="0%" x2="0%"
+																	y2="100%">
+																	<stop offset="0%" stop-color="#0c1e2c"
+																		stop-opacity="0" />
+																	<stop offset="100%" stop-color="#cb2240"
+																		stop-opacity="1" />
+																</linearGradient>
+															</defs>
+															<circle cx="50" cy="50" r="47" stroke-dasharray="240, 300"
+																stroke="#cb2240" stroke-width="4" fill="none" />
+														</svg>
+													</div>
+													<div class="product-inf__percent-txt">
+														{{accesorioSeleccionado.stock}}
+													</div>
+												</div>
+
+												<span class="product-inf__title">PRODUCTS IN STOCK</span>
+											</div>
+
+										</div>
+
+										<div class="product-slider__bottom">
+											<button @click="agregarAlCarrito()" class="product-slider__cart btnCards ">
+												ADD TO CART
+											</button>
+											<label for="">
+												Select stock
+
+												<input v-model="stockSeleccionado" type="number" name="" min="1" :max="accesorioSeleccionado.stock" class="inputFields" placeholder="Stock">
+											</label>
+
+											
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-slider__item swiper-slide" data-target="img1">
+								<div class="product-slider__card">
+									
+									<div class="product-slider__content">
+										<h1 class="product-slider__title">
+											 <br> 
+										</h1>
+										<span class="product-slider__price">$9.999,<sup>99</sup></span>
+										<div class="product-ctr">
+											<div class="product-labels">
+												<div class="product-labels__title">ENGINE UNIT</div>
+
+												<div class="product-labels__group">
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type1" checked>
+														<span class="product-labels__txt">P-S4 TWIN</span>
+													</label>
+
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type1">
+														<span class="product-labels__txt">P-W401</span>
+													</label>
+												</div>
+
+											</div>
+
+											<span class="hr-vertical"></span>
+
+											<div class="product-inf">
+												<div class="product-inf__percent">
+													<div class="product-inf__percent-circle">
+														<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+															viewBox="0 0 100 100">
+															<defs>
+																<linearGradient id="gradient" x1="0%" y1="0%" x2="0%"
+																	y2="100%">
+																	<stop offset="0%" stop-color="#0c1e2c"
+																		stop-opacity="0" />
+																	<stop offset="100%" stop-color="#cb2240"
+																		stop-opacity="1" />
+																</linearGradient>
+															</defs>
+															<circle cx="50" cy="50" r="47" stroke-dasharray="225, 300"
+																stroke="#cb2240" stroke-width="4" fill="none" />
+														</svg>
+													</div>
+													<div class="product-inf__percent-txt">
+														75%
+													</div>
+												</div>
+
+												<span class="product-inf__title">DURABILITY</span>
+											</div>
+
+										</div>
+
+										<div class="product-slider__bottom">
+											<button class="product-slider__cart">
+												ADD TO CART
+											</button>
+
+											<button class="product-slider__fav js-fav"><span class="heart"></span> ADD
+												TO WISHLIST</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- <div class="product-slider__item swiper-slide" data-target="img2">
+								<div class="product-slider__card">
+									<img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405222/starwars/item-2-bg.webp"
+										alt="star wars" class="product-slider__cover">
+									<div class="product-slider__content">
+										<h1 class="product-slider__title">
+											KYLO REN'S <br> LIGHTSABER
+										</h1>
+										<span class="product-slider__price">$1.699,<sup>99</sup></span>
+										<div class="product-ctr">
+											<div class="product-labels">
+												<div class="product-labels__title">VOLTAGE RANGE</div>
+
+												<div class="product-labels__group">
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type3" checked>
+														<span class="product-labels__txt">2000 <sup>WATT</sup></span>
+													</label>
+
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type3">
+														<span class="product-labels__txt">2800 <sup>WATT</sup></span>
+													</label>
+												</div>
+
+												<div class="product-labels__title">LASER SIZE</div>
+
+												<div class="product-labels__group">
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type2">
+														<span class="product-labels__txt">S</span>
+													</label>
+
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type2" checked>
+														<span class="product-labels__txt">M</span>
+													</label>
+
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type2">
+														<span class="product-labels__txt">L</span>
+													</label>
+
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type2">
+														<span class="product-labels__txt">XL</span>
+													</label>
+
+												</div>
+
+											</div>
+
+											<span class="hr-vertical"></span>
+
+											<div class="product-inf">
+												<div class="product-inf__percent">
+													<div class="product-inf__percent-circle">
+														<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+															viewBox="0 0 100 100">
+															<defs>
+																<linearGradient id="gradient" x1="0%" y1="0%" x2="0%"
+																	y2="100%">
+																	<stop offset="0%" stop-color="#0c1e2c"
+																		stop-opacity="0" />
+																	<stop offset="100%" stop-color="#cb2240"
+																		stop-opacity="1" />
+																</linearGradient>
+															</defs>
+															<circle cx="50" cy="50" r="47" stroke-dasharray="240, 300"
+																stroke="#cb2240" stroke-width="4" fill="none" />
+														</svg>
+													</div>
+													<div class="product-inf__percent-txt">
+														80%
+													</div>
+												</div>
+
+												<span class="product-inf__title">DURABILITY</span>
+											</div>
+
+										</div>
+
+										<div class="product-slider__bottom">
+											<button class="product-slider__cart">
+												ADD TO CART
+											</button>
+
+											<button class="product-slider__fav js-fav"><span class="heart"></span> ADD
+												TO WISHLIST</button>
+										</div>
+									</div>
+								</div>
+							</div> -->
+
+							<!-- <div class="product-slider__item swiper-slide" data-target="img3">
+								<div class="product-slider__card">
+									<img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405215/starwars/item-3-bg.webp"
+										alt="star wars" class="product-slider__cover">
+									<div class="product-slider__content">
+										<h1 class="product-slider__title">
+											IMPERIAL ARMY'S <br>
+											DEATH STAR
+										</h1>
+										<span class="product-slider__price">$9.999,<sup>99</sup></span>
+										<div class="product-ctr">
+											<div class="product-labels">
+												<div class="product-labels__title">HYPERDRIVE RATING</div>
+
+												<div class="product-labels__group">
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type6" checked>
+														<span class="product-labels__txt">CLASS 4</span>
+													</label>
+
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type6">
+														<span class="product-labels__txt">CLASS 20</span>
+													</label>
+												</div>
+
+												<div class="product-labels__title">ARMANENT</div>
+
+												<div class="product-labels__group">
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type7" checked>
+														<span class="product-labels__txt">SUPERLASER</span>
+													</label>
+
+													<label class="product-labels__item">
+														<input type="radio" class="product-labels__checkbox"
+															name="type7">
+														<span class="product-labels__txt">TURBOLASER</span>
+													</label>
+												</div>
+
+											</div>
+
+											<span class="hr-vertical"></span>
+
+											<div class="product-inf">
+												<div class="product-inf__percent">
+													<div class="product-inf__percent-circle">
+														<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+															viewBox="0 0 100 100">
+															<defs>
+																<linearGradient id="gradient" x1="0%" y1="0%" x2="0%"
+																	y2="100%">
+																	<stop offset="0%" stop-color="#0c1e2c"
+																		stop-opacity="0" />
+																	<stop offset="100%" stop-color="#cb2240"
+																		stop-opacity="1" />
+																</linearGradient>
+															</defs>
+															<circle cx="50" cy="50" r="47" stroke-dasharray="240, 300"
+																stroke="#cb2240" stroke-width="4" fill="none" />
+														</svg>
+													</div>
+													<div class="product-inf__percent-txt">
+														80%
+													</div>
+												</div>
+
+												<span class="product-inf__title">DURABILITY RATE</span>
+											</div>
+
+										</div>
+
+										<div class="product-slider__bottom">
+											<button class="product-slider__cart">
+												ADD TO CART
+											</button>
+
+											<button class="product-slider__fav js-fav"><span class="heart"></span> ADD
+												TO WISHLIST</button>
+										</div>
+									</div>
+								</div>
+							</div> -->
+
+
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	</div>
+	<!--================End Single Product Area =================-->
+
+
+	<!--================Product Description Area =================-->
+	<section class="product_description_area">
+		<div class="container ">
+			<ul class="nav nav-tabs agregando-box-shadow" id="myTab" role="tablist">
+				<li class="btnCards p-1">
+					<a class="nav-link btnCards " id="home-tab" data-toggle="tab" href="#home" role="tab"
+						aria-controls="home" aria-selected="true">Description</a>
+				</li>
+				<li class="btnCards p-1">
+					<a class="nav-link btnCards" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+						aria-controls="profile" aria-selected="false">Specification</a>
+				</li>
+				<li class="btnCards p-1">
+					<a class="nav-link btnCards" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+						aria-controls="contact" aria-selected="false">Comments</a>
+				</li>
+				<li class="btnCards p-1">
+					<a class="nav-link active btnCards" id="review-tab" data-toggle="tab" href="#review" role="tab"
+						aria-controls="review" aria-selected="false">Reviews</a>
+				</li>
+			</ul>
+			<div class="tab-content agregando-box-shadow" id="myTabContent">
+				<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<p class="fw-bold fs-5">{{accesorioSeleccionado.description}} </p>
+				
+				</div>
+				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="table-responsive">
+						<table class="table">
+							<tbody>
+								<tr v-for="(propiedad,valor) in accesorioSeleccionado" >
+									<td >
+										<h5 class="fw-bold fs-5" > {{valor}}:  {{propiedad}} </h5>
+									</td>
+									<td>
+										
+									</td>
+								</tr>
+							<!-- 	<tr>
+									<td>
+										<h5>memori</h5>
+									</td>
+									<td>
+										<h5>508mm</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>ram</h5>
+									</td>
+									<td>
+										<h5>85mm</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Weight</h5>
+									</td>
+									<td>
+										<h5>52gm</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Quality checking</h5>
+									</td>
+									<td>
+										<h5>yes</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Freshness Duration</h5>
+									</td>
+									<td>
+										<h5>03days</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>When packeting</h5>
+									</td>
+									<td>
+										<h5>Without touch of hand</h5>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<h5>Each Box contains</h5>
+									</td>
+									<td>
+										<h5>60pcs</h5>
+									</td>
+								</tr> -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="comment_list">
+								<div class="review_item">
+									<div class="media d-flex">
+										<div >
+											<img  class="imgcom" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg"
+												style="height: 5rem;" alt="">
+										</div>
+										<div class="media-body">
+											<h4>Blake Ruiz</h4>
+											<h5>12th Feb, 2018 at 05:56 pm</h5>
+											<a class="reply_btn" href="#">Reply</a>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+										incididunt ut labore et
+										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+										laboris nisi ut aliquip ex ea
+										commodo</p>
+								</div>
+								<div class="review_item">
+									<div class="media d-flex">
+										<div >
+											<img  class="imgcom" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg"
+												style="height: 5rem;" alt="">
+										</div>
+										<div class="media-body">
+											<h4>Blake Ruiz</h4>
+											<h5>12th Feb, 2018 at 05:56 pm</h5>
+											<a class="reply_btn" href="#">Reply</a>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+										incididunt ut labore et
+										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+										laboris nisi ut aliquip ex ea
+										commodo</p>
+								</div>
+								
+								<div class="review_item">
+									<div class="media d-flex">
+										<div >
+											<img  class="imgcom" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg"
+												style="height: 5rem;" alt="">
+										</div>
+										<div class="media-body">
+											<h4>Blake Ruiz</h4>
+											<h5>12th Feb, 2018 at 05:56 pm</h5>
+											<a class="reply_btn" href="#">Reply</a>
+										</div>
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+										incididunt ut labore et
+										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+										laboris nisi ut aliquip ex ea
+										commodo</p>
+								</div>
+								
+								
+							
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="review_box">
+								<h4>Post a comment</h4>
+								<form class="row contact_form gap-3" action="contact_process.php" method="post"
+									id="contactForm" novalidate="novalidate">
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" id="name" name="name"
+												placeholder="Your Full name">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="email" class="form-control" id="email" name="email"
+												placeholder="Email Address">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" id="number" name="number"
+												placeholder="Phone Number">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<textarea class="form-control" name="message" id="message" rows="1"
+												placeholder="Message"></textarea>
+										</div>
+									</div>
+									<div class="col-md-12 text-right">
+										<button type="submit" value="submit" class=" btnCards">Submit Now</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+					<div class="row">
+						<div class="col-lg-6">
+
+							<div class="review_list">
+								<div class="review_item">
+									<div class="media d-flex">
+										<div >
+											<img  class="imgcom" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg"
+												style="height: 5rem;" alt="">
+										</div>
+										<div class="media-body">
+											<h4>Blake Ruiz</h4>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"></i>
+										</div>
+										
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+										incididunt ut labore et
+										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+										laboris nisi ut aliquip ex ea
+										commodo</p>
+								</div>
+								<div class="review_item">
+									<div class="media d-flex">
+										<div >
+											<img  class="imgcom" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg"
+												style="height: 5rem;" alt="">
+										</div>
+										<div class="media-body">
+											<h4>Blake Ruiz</h4>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+										</div>
+										
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+										incididunt ut labore et
+										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+										laboris nisi ut aliquip ex ea
+										commodo</p>
+								</div>
+								<div class="review_item">
+									<div class="media d-flex">
+										<div >
+											<img  class="imgcom" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg"
+												style="height: 5rem;" alt="">
+										</div>
+										<div class="media-body">
+											<h4>Blake Ruiz</h4>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"><img src="https://cdn-icons-png.flaticon.com/512/2534/2534324.png" style="height: 2rem;" alt=""></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+										</div>
+										
+									</div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+										incididunt ut labore et
+										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+										laboris nisi ut aliquip ex ea
+										commodo</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="review_box">
+								<h4>Add a Review</h4>
+								<p>Your Rating:</p>
+								<ul class="list">
+									<li><a href="#"><i class="fa fa-star"></i></a></li>
+									<li><a href="#"><i class="fa fa-star"></i></a></li>
+									<li><a href="#"><i class="fa fa-star"></i></a></li>
+									<li><a href="#"><i class="fa fa-star"></i></a></li>
+									<li><a href="#"><i class="fa fa-star"></i></a></li>
+								</ul>
+								<p>Outstanding</p>
+								<form class="row contact_form gap-3" action="contact_process.php" method="post"
+									id="contactForm" novalidate="novalidate">
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" id="name" name="name"
+												placeholder="Your Full name" onfocus="this.placeholder = ''"
+												onblur="this.placeholder = 'Your Full name'">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="email" class="form-control" id="email" name="email"
+												placeholder="Email Address" onfocus="this.placeholder = ''"
+												onblur="this.placeholder = 'Email Address'">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" id="number" name="number"
+												placeholder="Phone Number" onfocus="this.placeholder = ''"
+												onblur="this.placeholder = 'Phone Number'">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<textarea class="form-control" name="message" id="message" rows="1"
+												placeholder="Review" onfocus="this.placeholder = ''"
+												onblur="this.placeholder = 'Review'"></textarea></textarea>
+										</div>
+									</div>
+									<div class="col-md-11 text-right">
+										<button type="submit" value="submit" class="btnCards">Submit Now</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Product Description Area =================-->
+
+
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>AOS.init({ duration: 3000, });</script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+	<script src="./assets/JS/details.js"></script>
+	<script src="./assets/JS/vuedetails.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,671 @@
+@import url("conf-iniciales.css");
+/* NAV */
+.boton-nav span {
+    color: white;
+    position: relative;
+    transition: 500ms;
+    transition-delay: 500ms;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+ 
+}
+     /* SECCION CAMI */
+      
+      .slogan1 {
+        background: radial-gradient(
+           rgb(0, 0, 0), 
+           rgb(255, 51, 51) 
+          ) fixed;
+          background: conic-gradient(
+            rgb(0, 0, 0), 
+            rgb(0, 0, 0), 
+            rgb(255, 51, 51) 
+          ) fixed;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /* text-align: center; */
+        color: white;
+        /* min-block-size: 200vh; */
+        min-inline-size: 40%;
+        padding: 5vmin;
+        box-sizing: border-box;
+        display: grid;
+        font-family: 'Nanum Gothic Coding', monospace;
+        font-size: min(180%, 5vmin);
+        font-weight: bolder;
+        -webkit-text-stroke: red .1rem;
+    
+      }
+      .slogan2 {
+        background: radial-gradient(
+          rgb(255, 51, 51) 
+           rgb(0, 0, 0), 
+          ) fixed;
+          background: conic-gradient(
+            rgb(255, 51, 51),
+            rgb(0, 0, 0) ,
+            rgb(0, 0, 0)
+          ) fixed;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /* text-align: center; */
+        color: white;
+        /* min-block-size: 200vh; */
+        min-inline-size: 40%;
+        padding: 5vmin;
+        box-sizing: border-box;
+        display: grid;
+        font-family: 'Nanum Gothic Coding', monospace;
+        font-size: min(180%, 5vmin);
+        font-weight: bolder;
+        -webkit-text-stroke: red .1rem
+      }
+     
+    .slogan1 h1 {
+        font-size: 10vmin;
+        line-height: 1.1;
+        max-inline-size: 15ch;
+        margin: auto;
+      }
+      
+    .slogan1  p {
+        font-family: 'Nanum Gothic Coding', monospace;
+        margin-top: 1ch;
+        line-height: 1.35;
+        max-inline-size: 40ch;
+        margin: auto;
+      
+      }
+/* GIF SLOGAN PRINCIPAL */
+section .sloganPrincipal{
+   /*  margin-top: 3rem; */
+   z-index: 10;
+}
+    .sloganPrincipal{
+        height: 15rem;
+        width: 20rem;
+      }
+
+/* TARJETAS 3D */
+      /* @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap"); */
+
+      body section {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .card {
+        position: relative;
+        height: 400px;
+        width: 100%;
+        margin: 10px 0;
+        transition: ease all 2.3s;
+        perspective: 1200px;
+        background-color: black;
+       
+        
+      }
+      .card:hover .cover {
+        transform: rotateX(0deg) rotateY(-180deg);
+      }
+      .card:hover .cover:before {
+        transform: translateZ(30px);
+      }
+      .card:hover .cover:after {
+        background-color: black;
+      }
+      .card:hover .cover h1 {
+        transform: translateZ(100px);
+      }
+      .card:hover .cover .price {
+        transform: translateZ(60px);
+      }
+      .card:hover .cover a {
+        transform: translateZ(-60px) rotatey(-180deg);
+      }
+      .card .cover {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform-style: preserve-3d;
+        transition: ease all 2.3s;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+      .card .cover:before {
+        content: "";
+        position: absolute;
+        border: 5px solid rgba(180, 178, 178, 0.5);
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        z-index: 2;
+        transition: ease all 2.3s;
+        transform-style: preserve-3d;
+        transform: translateZ(0px);
+      }
+      .card .cover:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 2;
+        transition: ease all 1.3s;
+        background: rgba(0, 0, 0, 0.4);
+      }
+      .card .cover.item-a {
+        background-image: url("../img/imgLastTechnology.jpg");
+      }
+      .card .cover.item-b {
+        background-image: url("../img/auriculares.jpg");
+      }
+      .card .cover.item-c {
+        background-image: url("../img/promociones.jpg");
+      }
+      .card .cover h1 {
+        font-weight: 600;
+        font-family: 'Nanum Gothic Coding', monospace;
+        position: absolute;
+        bottom: 55px;
+        left: 50px;
+        color: white;
+        transform-style: preserve-3d;
+        transition: ease all 2.3s;
+        z-index: 3;
+        font-size: 3em;
+        transform: translateZ(0px);
+        -webkit-text-stroke: 2px #dc1d1d
+      }
+      .card .cover .price {
+        font-weight: 200;
+        position: absolute;
+        top: 55px;
+        right: 50px;
+        color: white;
+        transform-style: preserve-3d;
+        transition: ease all 2.3s;
+        z-index: 4;
+        font-size: 2em;
+        transform: translateZ(0px);
+        -webkit-text-stroke: .5px rgb(220, 29, 29)
+
+       
+      }
+      .card .card-back {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: black;
+        transform-style: preserve-3d;
+        transition: ease all 2.3s;
+        transform: translateZ(-1px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid rgba(180, 178, 178, 0.5) ;
+      }
+        
+      /* BOTON CARDS 3D */
+          .btnCards {
+            --color: rgb(220, 29, 29);
+            /* --color2: black; */
+            padding: 0.8em 1.75em;
+            background-color:  rgb(220, 29, 29);
+            color: #fff;
+            border-radius: 6px;
+            border: .3px solid var(--color);
+            transition: .5s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            z-index: 1;
+            font-weight: 300;
+            font-size: 17px;
+            font-family: 'Nanum Gothic Coding', monospace;
+            text-decoration: none;
+            text-transform: uppercase;
+          
+           }
+           
+           .btnCards::after, .btnCards::before {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            transform: skew(90deg) translate(-50%, -50%);
+            position: absolute;
+            inset: 50%;
+            left: 25%;
+            z-index: -1;
+            transition: .3s ease-out;
+            background-color:  black;
+            color:#fff !important;
+           }
+           
+           .btnCards::before {
+            top: -50%;
+            left: -25%;
+            transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+           }
+           
+           .btnCards:hover::before {
+            transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+           }
+           
+           .btnCards:hover::after {
+            transform: skew(45deg) translate(-50%, -50%);
+           
+            
+           }
+           
+           .btnCards:hover {
+            color: rgb(220, 29, 29);
+           }
+           
+           .btnCards:active {
+            filter: brightness(.7);
+            transform: scale(.98);
+          
+           }
+
+      /* BOTON VIX WORLD*/
+     
+      .vixWorld {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .box {
+        width: 65px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        font-family: 'Nanum Gothic Coding', monospace;
+        font-weight: 700;
+        color: #fff;
+        transition: all .8s;
+        cursor: pointer;
+        position: relative;
+        background: rgb(220, 29, 29);
+        overflow: hidden;
+      }
+      
+      .box:before {
+        content: "W";
+        position: absolute;
+        top: 0;
+        background: black;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(100%);
+        transition: transform .4s;
+      }
+      
+      .box:nth-child(2)::before {
+        transform: translateY(-100%);
+        content: 'O';
+      }
+      
+      .box:nth-child(3)::before {
+        content: 'R';
+      }
+      
+      .box:nth-child(4)::before {
+        transform: translateY(-100%);
+        content: 'L';
+      }
+      
+      .box:nth-child(5)::before {
+        content: 'D';
+      }
+      
+      .vixWorld:hover .box:before {
+        transform: translateY(0);
+      }
+
+      /* BOTON DISCOVER MORE */
+      .discoverMore{
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* BOTON REGISTRARSE */
+      /* ::selection {
+        background: rgb(220, 29, 29)
+      }
+      .svg-wrapper {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        width: 350px;
+      }
+      .shape1,
+      .shape2 {
+        stroke-dasharray: 1120;
+        stroke-width: 5px;
+        fill: transparent;
+        stroke: #dc1d1d;
+        border-bottom: 5px solid black;
+        transition-timing-function: linear;
+        transition: stroke-dashoffset 4s, stroke-dasharray 4s;
+      }
+      .shape1 {
+        stroke-dashoffset: 1120;
+      }
+      .shape2 {
+        stroke-dashoffset: -1120;
+      }
+      .text a{
+        font-family: 'Nanum Gothic Coding', monospace;
+         font-size: 22px;
+        line-height: 32px;
+        letter-spacing: 8px;
+        color: #fff;
+        top: -48px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+      }
+      .svg-wrapper:hover .shape1,
+      .svg-wrapper:hover .shape2 {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 1120;
+      } */
+
+      :root {
+        --glow-color: rgb(220, 29, 29);
+      }
+      
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      
+      .glowing-btn {
+        position: relative;
+        color: var(--glow-color);
+        cursor: pointer;
+        padding: 0.35em 1em;
+        border: 0.15em solid var(--glow-color);
+        border-radius: 0.45em;
+        background: none;
+        perspective: 2em;
+        font-family: 'Nanum Gothic Coding', monospace;
+        font-size: 2em;
+        font-weight: 900;
+        letter-spacing: 1em;
+        -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+          0px 0px 0.5em 0px var(--glow-color);
+        -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+          0px 0px 0.5em 0px var(--glow-color);
+        box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+          0px 0px 0.5em 0px var(--glow-color);
+        animation: border-flicker 2s linear infinite;
+      }
+      
+      .glowing-txt a {
+        float: left;
+        margin-right: -0.8em;
+        -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+          0 0 0.45em var(--glow-color);
+        -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+          0 0 0.45em var(--glow-color);
+        text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+        animation: text-flicker 3s linear infinite;
+        text-decoration: none;
+        color: #fff;
+      }
+      
+      .faulty-letter {
+        opacity: 0.5;
+        animation: faulty-flicker 2s linear infinite;
+      }
+      
+      .glowing-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.7;
+        filter: blur(1em);
+        transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+        background: var(--glow-color);
+        pointer-events: none;
+      }
+      
+      .glowing-btn::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index: -1;
+        background-color:#fff;
+        border-radius: .5rem;
+        box-shadow: 0 0 2em 0.2em var(--glow-color);
+        transition: opacity 100ms linear;
+      }
+      
+      .glowing-btn:hover {
+        color: rgb(220, 29, 29);
+        text-shadow: none;
+        animation: none;
+      }
+      
+      .glowing-btn:hover .glowing-txt a{
+        animation: none;
+        color: #dc1d1d;
+      }
+      
+      .glowing-btn:hover .faulty-letter {
+        animation: none;
+        text-shadow: none;
+        opacity: 1;
+      }
+      
+      .glowing-btn:hover:before {
+        filter: blur(1.5em);
+        opacity: 1;
+      }
+      
+      .glowing-btn:hover:after {
+        opacity: 1;
+      }
+      
+      @keyframes faulty-flicker {
+        0% {
+          opacity: 0.1;
+        }
+        2% {
+          opacity: 0.1;
+        }
+        4% {
+          opacity: 0.5;
+        }
+        19% {
+          opacity: 0.5;
+        }
+        21% {
+          opacity: 0.1;
+        }
+        23% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 0.5;
+        }
+        83% {
+          opacity: 0.4;
+        }
+      
+        87% {
+          opacity: 1;
+        }
+      }
+      
+      @keyframes text-flicker {
+        0% {
+          opacity: 0.1;
+        }
+      
+        2% {
+          opacity: 1;
+        }
+      
+        8% {
+          opacity: 0.1;
+        }
+      
+        9% {
+          opacity: 1;
+        }
+      
+        12% {
+          opacity: 0.1;
+        }
+        20% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0.3;
+        }
+        30% {
+          opacity: 1;
+        }
+      
+        70% {
+          opacity: 0.7;
+        }
+        72% {
+          opacity: 0.2;
+        }
+      
+        77% {
+          opacity: 0.9;
+        }
+        100% {
+          opacity: 0.9;
+        }
+      }
+      
+      @keyframes border-flicker {
+        0% {
+          opacity: 0.1;
+        }
+        2% {
+          opacity: 1;
+        }
+        4% {
+          opacity: 0.1;
+        }
+      
+        8% {
+          opacity: 1;
+        }
+        70% {
+          opacity: 0.7;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+.flechasLanding{
+height: 15rem;
+}
+
+/* FOTOS STAFF */
+.imagenesStaff{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 600px;
+  grid-gap: 0.5rem;
+}
+.image-container .image {
+  position: relative;
+  padding-bottom: 100%;
+}
+.image-container .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.image-container .image img:nth-of-type(1) {
+  filter: grayscale(1) brightness(40%);
+}
+.image-container .image img:nth-of-type(2) {
+  -webkit-clip-path: var(--clip-start);
+          clip-path: var(--clip-start);
+  transition: -webkit-clip-path 0.5s;
+  transition: clip-path 0.5s;
+  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
+}
+.image-container .image:hover img:nth-of-type(2) {
+  -webkit-clip-path: var(--clip-end);
+          clip-path: var(--clip-end);
+}
+
+
+
+
+
+
+      
+      @media only screen and (max-width: 600px) {
+        .glowing-btn{
+          font-size: 1em;
+        }
+      }
+      
+    @media screen and (max-width:1024px) {
+
+  
+    }
+    @media screen and (max-width:992px) {
+    
+    }
+    @media screen and (max-width:768px) {
+      .sloganPrincipal{
+        width: 100%;
+      }
+    }
+    @media screen and (max-width:425px) {
+   
+    }
+    @media screen and (max-width:375px) {
+    
+    }
+    @media screen and (max-width:320px) {
+    
+    }
